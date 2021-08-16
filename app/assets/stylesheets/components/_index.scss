@@ -7,14 +7,4 @@
 @import "search";
 @import "card";
 @import "container";
-
-#second-title {
-  padding-left: 36px;
-  padding-top: 5px;
-  font-family: 'Press Start 2P', cursive;
-}
-#blue-yellow-color {
-  color: #FFDF32;
-  border-color: 2px;
-  text-shadow: 2px 2px 2px #396bba, -2px -1px 2px #396bba;
-}
+@import "footer";
