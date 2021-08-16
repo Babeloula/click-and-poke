@@ -3,10 +3,52 @@
   background: white;
 }
 
+#navbarSupportedContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding-left: 50px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.nav-item-center {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+
+  a:hover {
+    color: orange;
+  }
+}
+
+.nav-item-center a { color: inherit; }
+
+h1 {
+  padding: 30px 0 8px;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  left: 7%;
+  bottom: 16px;
+  width: 150px;
+  height: 14px;
+  transform: skew(-12deg) translateX(-50%);
+  background: rgba(238,111,87,0.5);
+  z-index: -1;
 }
