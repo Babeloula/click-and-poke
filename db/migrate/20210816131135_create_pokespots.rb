@@ -7,7 +7,7 @@ class CreatePokespots < ActiveRecord::Migration[6.0]
       t.integer :price
       t.string :pokemon_type
       t.integer :scarcity_drop_level
-      t.boolean :available
+      t.boolean :available, default: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_131423) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "pokespot_id", null: false
-    t.string "status"
+    t.string "status", default: "Pending"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_131423) do
     t.integer "price"
     t.string "pokemon_type"
     t.integer "scarcity_drop_level"
-    t.boolean "available"
+    t.boolean "available", default: true
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_131423) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
-    t.string "rank"
+    t.string "rank", default: "Noob"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
