@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :clients_booking, through: :pokespots, source: :bookings
 
-  validates :username, presence: true, uniqueness: true
 end

@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Review.create!(booking_id: 1, rating: 5, comments: "ah oui oui!")
+puts "Finished!"
