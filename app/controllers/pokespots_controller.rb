@@ -13,15 +13,14 @@ class PokespotsController < ApplicationController
     if @pokespot.save
       redirect_to pokespot_path(@pokespot)
     else
-      raise
       render :new
     end
   end
-  
+
   def index
     @pokespots = policy_scope(Pokespot)
   end
-  
+
   def show
   end
 
