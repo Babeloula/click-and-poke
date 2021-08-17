@@ -2,8 +2,10 @@
 <div class="cards">
   <% @pokespots.each do |pokespot| %>
   <div class="card-trip">
-    <%= link_to pokespot_path(pokespot) do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class: "card-cover"%>
+    <%= link_to pokespot_path(pokespot), style: "text-decoration: none" do %>
+      <div class="card-cover"><% if pokespot.photo.attached? %>
+                <%= cl_image_tag pokespot.photo.key%>
+                <% end %></div>
       <div class="card-trip-infos">
         <div>
           <h2><%= pokespot.name %></h2>
@@ -11,7 +13,9 @@
           <p><%= pokespot.description %></p>
         </div>
         <h2 class="card-trip-pricing"><%= pokespot.price %>₽</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <% if pokespot.user.photo.attached? %>
+                <%= cl_image_tag pokespot.user.photo.key, class:"card-trip-user avatar-bordered" %>
+                <% end%>
       </div>
     <% end %>
   </div>
