@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Booking Details</h1>
+  <div>
+    <h2><%= @booking.status %></h2>
+    <h2><%= @booking.user.username %></h2>
+    <p> <%= @booking.start_date  %>
+    <p> <%= @booking.end_date  %>
+    <p> <%= @booking.pokespot.price %>
+    <p> <%= @booking.pokespot.name %>
+    <p> <%= @booking.pokespot.description %>
+    <p> <%= @booking.pokespot.pokemon_type %>
+    <p> <%= @booking.pokespot.scarcity_drop_level %>
+  </div>
+</div>
