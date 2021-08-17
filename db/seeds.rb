@@ -6,5 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#You will have to add a User first and then a Pokespot, a Booking and finally the review (in this order)
 Review.create!(booking_id: 1, rating: 5, comments: "ah oui oui!")
 puts "Finished!"
