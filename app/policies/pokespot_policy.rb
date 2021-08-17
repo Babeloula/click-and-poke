@@ -5,7 +5,11 @@ class PokespotPolicy < ApplicationPolicy
     end
   end
 
-  def create?
-    return true
-  end
+  # def create?
+  #   return true
+  # end
+
+  # def show?
+  #   true
+  # end
 end
