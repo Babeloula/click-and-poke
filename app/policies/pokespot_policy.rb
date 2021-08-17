@@ -15,6 +15,5 @@ class PokespotPolicy < ApplicationPolicy
 
   def destroy?
     record.user == user
-
   end
 end
