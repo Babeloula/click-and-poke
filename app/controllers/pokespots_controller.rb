@@ -1,7 +1,9 @@
 class PokespotsController < ApplicationController
-
-  before_action :set_pokespot, only: [:edit, :update]
-
+  before_action :set_pokespot, only: [:edit, :update, :show]
+  
+  def show
+  end
+  
   def edit
   end
 
