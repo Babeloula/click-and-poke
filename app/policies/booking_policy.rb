@@ -9,4 +9,7 @@ class BookingPolicy < ApplicationPolicy
     record.pokespot.user != user
   end
 
+  def show?
+    true
+  end
 end
