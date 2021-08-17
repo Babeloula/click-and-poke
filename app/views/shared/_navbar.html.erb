@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629120761/CLICK--POKE_1_zswqrb.png" %>
+    <%= image_tag asset_path('logo-clickpoke.png') %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629119514/badge_navbar_nk89rp.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag asset_path('badge_navbar.png'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "🗺 My PokeTrips", "#", class: "dropdown-item" %>
             <%= link_to "💌 Messages", "#", class: "dropdown-item" %>
