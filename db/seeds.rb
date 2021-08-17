@@ -34,4 +34,11 @@ pokespot2 = Pokespot.new(name: "Mon Jardin", address: "16 villa Gaudelet", descr
 pokespot2.save!
 puts "#{pokespot2.name} created!"
 
+booking1 = Booking.new(start_date: Date.parse('17/9/2021'), end_date: Date.parse('20/9/2021'), pokespot: pokespot2, user: user3)
+booking1.save!
+puts "#{booking1.pokespot.name} created!"
+booking2 = Booking.new(start_date: Date.parse('18/9/2021'), end_date: Date.parse('21/9/2021'), pokespot: pokespot1, user: user2)
+booking2.save!
+puts "#{booking2.pokespot.name} created!"
+
 puts "Finished!"
