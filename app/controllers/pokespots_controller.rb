@@ -6,10 +6,13 @@ class PokespotsController < ApplicationController
   end
 
  def create
-    @pokespot = pokespot.new(pokespot_params)
+    @pokespot = Pokespot.new(pokespot_params)
+    @pokespot.user = current_user
+    authorize @pokespot
     if @pokespot.save
       redirect_to pokespot_path(@pokespot)
     else
+      raise
       render :new
     end
   end
@@ -17,6 +20,6 @@ class PokespotsController < ApplicationController
   private
 
   def pokespot_params
-    params.require(:pokespot).permit(:name, :description, :address, :price, :pokemon_type, :scarcity_drop_level)
+    params.require(:pokespot).permit(:name, :description, :address, :price, :pokemon_type, :scarcity_drop_level, :photo)
   end
 end

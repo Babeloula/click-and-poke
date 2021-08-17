@@ -6,9 +6,9 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :address %>
-    <%= f.input :price %>
-    <%= f.input :pokemon_type %>
-    <%= f.input :scarcity_drop_level %>
+    <%= f.input :price, hint: 'Indicate the price per day hunters will have to pay to hunt at your land' %>
+    <%= f.input :pokemon_type, as: :check_boxes, collection: Pokespot::TYPES %>
+    <%= f.input :scarcity_drop_level, hint: 'Indicate the approx. % of chances hunter will get to catch a rare Pokemon ✨' %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Submit list", class: "btn btn-primary" %>
   <% end %>
