@@ -11,5 +11,5 @@ class Pokespot < ApplicationRecord
   validates :pokemon_type, presence: true
   validates :scarcity_drop_level, presence: true
 
-  TYPES = ["Fire 🔥", "Water 💧", "Grass 🌿", "Electric ⚡️", "Poison ☠️", "Rock 🗿"]
+  TYPES = ["Fire", "Water", "Grass", "Electric", "Poison", "Rock"]
 end
