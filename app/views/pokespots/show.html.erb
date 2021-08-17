@@ -4,3 +4,13 @@
 <p><%= @pokespot.price %></p>
 <p><%= @pokespot.pokemon_type %></p>
 <p><%= @pokespot.scarcity_drop_level %></p>
+
+<% if policy(@pokespot).update? %>
+  <%= link_to "Update Pokespot",  edit_pokespot_path %>
+<% end %>
+<% if policy(@pokespot).destroy? %>
+  <%= link_to "Delete Pokespot",
+              pokespot_path(@pokespot),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+<% end %>
