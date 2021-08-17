@@ -8,9 +8,10 @@
 
 #You will have to add a User first and then a Pokespot, a Booking and finally the review (in this order)
 
-# Delete all existing users
-User.destroy_all
+puts "Cleaning database..."
 
+
+User.destroy_all
 puts "All record Destroyed"
 puts "____________________________"
 puts "Creating Users"
