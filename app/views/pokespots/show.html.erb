@@ -1,22 +1,47 @@
-<h1><%= @pokespot.name %></h1>
-<h2><%= @pokespot.description %></h2>
-<p><%= @pokespot.address %></p>
-<p><%= @pokespot.price %></p>
-<p><%= @pokespot.pokemon_type %></p>
-<p><%= @pokespot.scarcity_drop_level %></p>
+<div class="container-md py-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h1><%= @pokespot.name %></h1>
+      <div class="card text mb-3 p-3">
+        <p><strong><%= @pokespot.user.username %></strong></p>
+        <p><small>Description : <%= @pokespot.description %></small></p>
+        <p>Localisation : <%= @pokespot.address %></p>
+        <p>Type : <%= @pokespot.pokemon_type %></p>
+        <p>Scarcity Drop Level : <%= @pokespot.scarcity_drop_level %>%</p>
+        <span>Price : <%= @pokespot.price %>₽</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <%= simple_form_for [@pokespot, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.submit %>
+          <% end %>
+          <%# <a href="#" class="btn btn-primary d-flex justify-content-center flex-grow-1">Book Now</a> %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card text mb-3 p-3">
+        <p><strong><%= @pokespot.user.username %></strong></p>
+        <p><small>Rank : <%= @pokespot.user.rank %></small></p>
+      </div>
+    </div>
+
+  </div>
+
+
 
 <% if policy(@pokespot).update? %>
-  <%= link_to "Update Pokespot",  edit_pokespot_path %>
+  <%= link_to "Update Pokespot",  edit_pokespot_path, class: "btn btn-primary" %>
 <% end %>
 <% if policy(@pokespot).destroy? %>
   <%= link_to "Delete Pokespot",
               pokespot_path(@pokespot),
               method: :delete,
-              data: { confirm: "Are you sure?" } %>
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-danger" %>
 <% end %>
-
-<%= simple_form_for [@pokespot, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+</div>

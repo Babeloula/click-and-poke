@@ -1,17 +1,10 @@
-<%= form_for(@pokespot) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.label :pokemon_type %>
-  <%= f.text_field :pokemon_type %>
-  <%= f.label :scarcity_drop_level %>
-  <%= f.text_field :scarcity_drop_level %>
-  <%= f.label :available %>
-  <%= f.check_box :available %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for [ @pokespot ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :price, hint: 'Indicate the price per day hunters will have to pay to hunt at your land' %>
+    <%= f.input :pokemon_type, as: :radio_buttons, collection: Pokespot::TYPES %>
+    <%= f.input :scarcity_drop_level, hint: 'Indicate the approx. % of chances hunter will get to catch a rare Pokemon ✨' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Submit Pokespot", class: "btn btn-primary" %>
+  <% end %>
