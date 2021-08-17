@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
     @booking.pokespot = Pokespot.find(params[:pokespot_id])
     authorize @booking
     if @booking.save
-      redirect_to root_path
+      flash[:notice] = "Booking confirmed, CATCH'EM ALL 😁😁😁"
+      redirect_to pokespots_path
     else
       render :new
     end
