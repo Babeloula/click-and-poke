@@ -27,7 +27,7 @@
   <div class="card-trip">
     <%= link_to pokespot_path(pokespot), style: "text-decoration: none" do %>
       <div class="card-cover"><% if pokespot.photo.attached? %>
-                <%= cl_image_tag pokespot.photo.key%>
+                <%= cl_image_tag pokespot.photo.key, :width=>200, :crop=>"scale"%>
                 <% end %></div>
       <div class="card-trip-infos">
         <div>
