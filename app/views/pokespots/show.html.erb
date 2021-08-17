@@ -14,3 +14,9 @@
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 <% end %>
+
+<%= simple_form_for [@pokespot, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>
