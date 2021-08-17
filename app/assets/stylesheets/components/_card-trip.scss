@@ -2,10 +2,9 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
 }
 
-.card-cover {
+.card-trip > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -14,12 +13,7 @@
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 4px;
-}
-.card-trip h3 {
-  font-size: 13px;
-  font-weight: normal;
-  margin: 1px;
+  margin: 0;
 }
 
 .card-trip p {
@@ -35,7 +29,6 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  color: black;
 }
 
 .card-trip-infos .card-trip-user {
