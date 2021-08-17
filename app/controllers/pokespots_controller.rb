@@ -18,7 +18,11 @@ class PokespotsController < ApplicationController
   end
 
   def index
-    @pokespots = policy_scope(Pokespot)
+    if params[:filter]
+      @pokespots = policy_scope(Pokespot).where(pokemon_type: params[:filter])
+    else
+      @pokespots = policy_scope(Pokespot)
+    end
   end
 
   def show
