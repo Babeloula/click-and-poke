@@ -6,7 +6,10 @@ class PokespotPolicy < ApplicationPolicy
   end
 
   def update?
-    return true
-    # record.user == user
+    record.user == user
+  end
+
+  def destroy?
+    record.user == user
   end
 end
