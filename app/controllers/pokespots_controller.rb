@@ -1,8 +1,7 @@
 class PokespotsController < ApplicationController
-  authorize @restaurant
 
   def show
     @pokespot = Pokespot.find(params[:id])
+    authorize @pokespot
   end
-
 end
