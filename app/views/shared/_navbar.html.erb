@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
     <%= image_tag asset_path('logo-clickpoke.png') %>
     <% end %>
 
@@ -9,11 +9,11 @@
 
     <div class="nav-item-center">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Places to hunt</a>
+        <a><%= link_to "Places to Hunt 🏹", pokespots_path, class: "nav-link" %></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Become a PokéHost</a>
+        <a><%= link_to "Share your PokeSpot 🌎", new_pokespot_path, class: "nav-link" %></a>
       </li>
     </div>
 
