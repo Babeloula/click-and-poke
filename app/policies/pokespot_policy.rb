@@ -6,6 +6,6 @@ class PokespotPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 end

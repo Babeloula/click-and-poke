@@ -1,2 +1,15 @@
 <h1>Pokespots#new</h1>
-<p>Find me in app/views/pokespots/new.html.erb</p>
+<h1>Create a new Pokespot:</h1>
+
+<div class="container">
+  <%= simple_form_for [ @pokespot ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :pokemon_type %>
+    <%= f.input :scarcity_drop_level %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Submit list", class: "btn btn-primary" %>
+  <% end %>
+</div>
