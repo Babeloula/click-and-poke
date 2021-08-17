@@ -4,7 +4,7 @@ class PokespotPolicy < ApplicationPolicy
       scope.all
     end
   end
-
+  
   def show?
     true
   end
@@ -15,6 +15,5 @@ class PokespotPolicy < ApplicationPolicy
 
   def destroy?
     record.user == user
-
   end
 end

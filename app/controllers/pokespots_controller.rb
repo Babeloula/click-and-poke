@@ -1,6 +1,10 @@
 class PokespotsController < ApplicationController
   before_action :set_pokespot, only: [:edit, :update, :show, :destroy]
   
+  def index
+    @pokespots = policy_scope(Pokespot)
+  end
+  
   def show
   end
 
