@@ -1,15 +1,20 @@
 class PokespotsController < ApplicationController
-  before_action :set_pokespot, only: [:edit, :update, :show]
+  before_action :set_pokespot, only: [:edit, :update, :show, :destroy]
   
   def show
   end
-  
+
   def edit
   end
 
   def update
     @pokespot.update(pokespot_params)
     redirect_to pokespots_path(@pokespot)
+  end
+
+  def destroy
+    @pokespot.destroy
+    redirect_to pokespots_path
   end
 
   private
