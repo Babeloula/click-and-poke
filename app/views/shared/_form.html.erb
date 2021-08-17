@@ -1,0 +1,17 @@
+<%= form_for(@pokespot) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :pokemon_type %>
+  <%= f.text_field :pokemon_type %>
+  <%= f.label :scarcity_drop_level %>
+  <%= f.text_field :scarcity_drop_level %>
+  <%= f.label :available %>
+  <%= f.check_box :available %>
+  <%= f.submit %>
+<% end %>

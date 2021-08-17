@@ -1,5 +1,4 @@
 class PokespotsController < ApplicationController
-  authorize @restaurant
 
   before_action :set_pokespot, only: [:edit, :update]
 
@@ -15,5 +14,11 @@ class PokespotsController < ApplicationController
 
   def set_pokespot
     @pokespot = Pokespot.find(params[:id])
+    authorize @pokespot
+  end
+
+  def pokespot_params
+    params.require(:pokespot)
+          .permit(:name, :description, :address, :price, :pokemon_type, :scarcity_drop_level, :available, :user_id)
   end
 end
