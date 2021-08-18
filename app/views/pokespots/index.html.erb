@@ -1,52 +1,55 @@
-<h1>Discover your next Pokespot!</h1>
+<div class="container-fluid m-3 d-flex">
+  <div>
+    <h1>Discover your next Pokespot!</h1>
 
-<ul class="nav justify-content-center" id="nav-index">
-  <li class="nav-item-index mr-5">
-    <h2><%= link_to "🔥", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Fire") %></h2>
-  </li>
-  <li class="nav-item-index mr-5">
-    <h2><%= link_to "💧", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Water") %></h2>
-  </li>
-  <li class="nav-item-index mr-5">
-    <h2><%= link_to "🌿", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Grass") %></h2>
-  </li>
-  <li class="nav-item-index mr-5">
-    <h2><%= link_to "⚡️", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Electric") %></h2>
-  </li>
-  <li class="nav-item-index mr-5">
-    <h2><%= link_to "☠️", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Poison") %></h2>
-  </li>
-  <li class="nav-item-index">
-    <h2><%= link_to "🗿", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Rock") %></h2>
-  </li>
-</ul>
-
-
-<div class="cards">
-  <% @pokespots.each do |pokespot| %>
-  <div class="card-trip">
-    <%= link_to pokespot_path(pokespot), style: "text-decoration: none" do %>
-      <div class="card-cover"><% if pokespot.photo.attached? %>
-                <%= cl_image_tag pokespot.photo.key %>
-                <% end %></div>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= pokespot.name %></h2>
-          <h3>Pokemon type: <%= pokespot.pokemon_type%></h3>
-          <p><%= pokespot.description %></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= pokespot.price %>₽</h2>
-        <% if pokespot.user.photo.attached? %>
-                <%= cl_image_tag pokespot.user.photo.key, class:"card-trip-user avatar-bordered" %>
-                <% end%>
+    <ul class="nav justify-content-center">
+      <li class="nav-item mr-5">
+        <h2><%= link_to "🔥", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Fire") %></h2>
+      </li>
+      <li class="nav-item mr-5">
+        <h2><%= link_to "💧", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Water") %></h2>
+      </li>
+      <li class="nav-item mr-5">
+        <h2><%= link_to "🌿", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Grass") %></h2>
+      </li>
+      <li class="nav-item mr-5">
+        <h2><%= link_to "⚡️", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Electric") %></h2>
+      </li>
+      <li class="nav-item mr-5">
+        <h2><%= link_to "☠️", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Poison") %></h2>
+      </li>
+      <li class="nav-item">
+        <h2><%= link_to "🗿", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Rock") %></h2>
+      </li>
+    </ul>
+  
+    <div class="cards">
+      <% @pokespots.each do |pokespot| %>
+      <div class="card-trip">
+        <%= link_to pokespot_path(pokespot), style: "text-decoration: none" do %>
+          <div class="card-cover"><% if pokespot.photo.attached? %>
+                    <%= cl_image_tag pokespot.photo.key %>
+                    <% end %></div>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= pokespot.name %></h2>
+              <h3>Pokemon type: <%= pokespot.pokemon_type%></h3>
+              <p><%= pokespot.description %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= pokespot.price %>₽</h2>
+            <% if pokespot.user.photo.attached? %>
+                    <%= cl_image_tag pokespot.user.photo.key, class:"card-trip-user avatar-bordered" %>
+                    <% end%>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <% end %>
-</div>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
