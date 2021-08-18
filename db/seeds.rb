@@ -22,16 +22,17 @@ puts "Creating 10 Users"
   user = User.new(
     email: Faker::Internet.unique.email,
     username: Faker::Name.unique.name,
-    password: "password"
+    password: "password",
+    rank: User::RANK.sample
   )
   user.save!
 end
 
 puts "10 Users created!"
 
-puts "Creating 20 Pokespots"
+puts "Creating 30 Pokespots"
 
-20.times do
+30.times do
   Pokespot.create!(
     name: Faker::Games::Pokemon.unique.location,
     address: Faker::Address.unique.city,
@@ -39,11 +40,11 @@ puts "Creating 20 Pokespots"
     scarcity_drop_level: rand(1..100),
     price: rand(1..500),
     pokemon_type: Pokespot::TYPES.sample,
-    user_id: User.all.sample.id,
+    user_id: User.all.sample.id
     # photo: Faker::Placeholdit.image(size: '300x200'),
   )
 end
-puts "20 Pokespots created!"
+puts "30 Pokespots created!"
 
 puts "Creating 30 Bookings"
 
