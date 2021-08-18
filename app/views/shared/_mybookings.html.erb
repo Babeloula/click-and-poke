@@ -3,29 +3,54 @@
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">⁉️ Pending</a>
   </li>
   <li class="nav-item" role="presentation">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">‼️ In progress</a>
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">✅ Accepted</a>
   </li>
   <li class="nav-item" role="presentation">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">✅ Ended </a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Ended</a>
   </li>
 </ul>
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <% @bookings.status_Pending.each do |booking| %>
-        <%= booking %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
+            <p><strong>Client name : </strong><%= booking.user.username%></p>
+            <p><strong>Start date : </strong><%= booking.start_date %></p>
+            <p><strong>End date : </strong><%= booking.end_date %></p>
+            <a id="pending-background">Pending</a>
+          </div>
+        </div>
       <% end %>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <% @bookings.status_Accepted.each do |booking| %>
-      <% if (booking.start_date <= Date.today) && (booking.end_date >= Date.today) %>
-      <%= booking %>
-      <% end %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
+          <p><strong>Client name : </strong><%= booking.user.username%></p>
+          <p><strong>Start date : </strong><%= booking.start_date %></p>
+          <p><strong>End date : </strong><%= booking.end_date %></p>
+          <a id="validate-background">Booking accepted by PokeHost ✅</a>
+        </div>
+      </div>
     <% end %>
   </div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <% @bookings.each do |booking| %>
-      <% if booking.end_date == Date.today%>
-      <%= booking %>
+      <% if booking.end_date == Date.today || booking.status_Declined?%>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
+            <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
+            <p><strong>Start date : </strong><%= booking.start_date %></p>
+            <p><strong>End date : </strong><%= booking.end_date %></p>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>

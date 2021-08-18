@@ -12,11 +12,13 @@ require "faker"
 puts "Cleaning database..."
 
 User.destroy_all
+Pokespot.destroy_all
+Booking.destroy_all
 puts "All record Destroyed"
 puts "____________________________"
-puts "Creating 20 Users"
+puts "Creating 10 Users"
 
-20.times do
+10.times do
   user = User.new(
     email: Faker::Internet.unique.email,
     username: Faker::Name.unique.name,
@@ -25,14 +27,14 @@ puts "Creating 20 Users"
   user.save!
 end
 
-puts "Users created!"
+puts "10 Users created!"
 
-puts "Creating 30 Pokespots"
+puts "Creating 20 Pokespots"
 
-30.times do
-  pokespot = Pokespot.new(
+20.times do
+  Pokespot.create!(
     name: Faker::Games::Pokemon.unique.location,
-    address: Faker::Address.unique.full_address,
+    address: Faker::Address.unique.city,
     description: Faker::JapaneseMedia::OnePiece.quote,
     scarcity_drop_level: rand(1..100),
     price: rand(1..500),
@@ -40,13 +42,12 @@ puts "Creating 30 Pokespots"
     user_id: User.all.sample.id,
     # photo: Faker::Placeholdit.image(size: '300x200'),
   )
-  pokespot.save!
 end
-puts "30 Pokespots created!"
+puts "20 Pokespots created!"
 
-puts "Creating 50 Bookings"
+puts "Creating 30 Bookings"
 
-50.times do
+30.times do
   booking = Booking.new(
     start_date: Faker::Date.between(from: 3.days.ago, to: 1.day.from_now),
     end_date: Faker::Date.between(from: 1.day.ago, to: 5.days.from_now),
@@ -55,11 +56,11 @@ puts "Creating 50 Bookings"
   )
   booking.save!
 end
-puts "50 Bookings created!"
+puts "30 Bookings created!"
 
-puts "Creating 100 Reviews"
+puts "Creating 50 Reviews"
 
-100.times do
+50.times do
   review = Review.new(
     rating: rand(1..5),
     comments: Faker::TvShows::MichaelScott.quote,

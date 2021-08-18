@@ -4,6 +4,9 @@ class Pokespot < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true
@@ -18,7 +21,7 @@ class Pokespot < ApplicationRecord
   def add_default_image
     unless photo.attached?
       photo.attach(
-        io: File.open(Rails.root.join('app', 'assets', 'images', 'pokeballdefault.svg.png')),
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'pokecover', ['1.jpg', '2.jpg', '3.jpg', '4.png', '5.jpg', '6.jpg', '7.png', '8.jpg', '9.png', '10.jpg'].sample)),
         filename: 'pokeballdefault.svg.png', content_type: 'image/png'
       )
     end
