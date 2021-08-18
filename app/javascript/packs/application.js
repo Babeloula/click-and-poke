@@ -23,6 +23,8 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import "bootstrap";
 
 import { loadDynamicBannerText } from '../components/banner';
@@ -35,6 +37,12 @@ document.addEventListener('turbolinks:load', () => {
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
