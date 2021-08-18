@@ -96,6 +96,8 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
@@ -127,8 +129,6 @@ GEM
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.3-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.12.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -264,6 +264,7 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
+  faker
   font-awesome-sass
   geocoder
   jbuilder (~> 2.7)

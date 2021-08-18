@@ -15,4 +15,15 @@ class Pokespot < ApplicationRecord
   validates :scarcity_drop_level, presence: true
 
   TYPES = ["Fire", "Water", "Grass", "Electric", "Poison", "Rock"]
+
+  after_commit :add_default_image, on: %i[create update]
+
+  def add_default_image
+    unless photo.attached?
+      photo.attach(
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'pokeballdefault.svg.png')),
+        filename: 'pokeballdefault.svg.png', content_type: 'image/png'
+      )
+    end
+  end
 end
