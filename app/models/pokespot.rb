@@ -21,7 +21,7 @@ class Pokespot < ApplicationRecord
   def add_default_image
     unless photo.attached?
       photo.attach(
-        io: File.open(Rails.root.join('app', 'assets', 'images', 'pokeballdefault.svg.png')),
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'pokecover', ['1.jpg', '2.jpg', '3.jpg', '4.png', '5.jpg', '6.jpg', '7.png', '8.jpg', '9.png', '10.jpg'].sample)),
         filename: 'pokeballdefault.svg.png', content_type: 'image/png'
       )
     end
