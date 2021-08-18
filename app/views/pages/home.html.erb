@@ -19,23 +19,46 @@
 
 <div>
   <div id="second-title">
-    <h1>Bests Pokespots</h1>
+    <h1>Choose your type</h1>
   </div>
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
-    </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
-    </div>
+      <%= link_to pokespots_path(filter: "Water") do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629291402/water_fjdurr.png)">
+          Water
+        </div>
+      <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
+  <%= link_to pokespots_path(filter: "Fire") do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629292335/fire_ubhwjw.jpg)">
+      Fire
     </div>
+  <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
+  <%= link_to pokespots_path(filter: "Grass") do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629292349/grass_udicok.jpg)">
+      Grass
+    </div>
+  <% end %>
+
+  <%= link_to pokespots_path(filter: "Electric") do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629291391/thunder_ogbwso.jpg)">
+      Electric
     </div>
   </div>
+  <% end %>
+
+</div>
+
+<div>
+  <div id="second-title">
+    <h1>Become a PokeHost</h1>
+  </div>
+
+
+  <div class="cards-1">
+    <div class="card-host" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629293780/2595054e-d1d9-4fde-8046-58d51fcb3164_mszhyr.jpg)">
+      Become a host and earn Pokedollars $$
+    </div>
+
 </div>
