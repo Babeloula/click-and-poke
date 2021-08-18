@@ -14,7 +14,7 @@
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <% @bookings.status_Pending.each do |booking| %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
           <div class="card-product-infos">
             <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
             <p><strong>Client name : </strong><%= booking.user.username%></p>
@@ -28,7 +28,7 @@
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <% @bookings.status_Accepted.each do |booking| %>
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
         <div class="card-product-infos">
           <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
           <p><strong>Client name : </strong><%= booking.user.username%></p>
@@ -43,7 +43,7 @@
     <% @bookings.each do |booking| %>
       <% if booking.end_date == Date.today || booking.status_Declined?%>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
           <div class="card-product-infos">
             <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
             <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
