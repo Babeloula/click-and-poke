@@ -1,16 +1,16 @@
-.nav-item a {
+.nav-item-index a {
   text-decoration: none;
 }
 
-.nav {
+.nav-index {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.nav-item {
+.nav-item-index {
   transition: 0.7s;
 }
-.nav-item:hover {
+.nav-item-index:hover {
   transform: scale(1.5);
 }
 
