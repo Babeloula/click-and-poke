@@ -26,6 +26,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
 #checkout {
   position: sticky;
@@ -41,6 +42,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: 0.7s;
 }
+
 .card-trip:hover {
   transform: scale(1.08);
 }
@@ -61,6 +63,7 @@
   font-weight: bold;
   margin-bottom: 4px;
 }
+
 .card-trip h3 {
   font-size: 13px;
   font-weight: normal;
