@@ -7,38 +7,66 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #You will have to add a User first and then a Pokespot, a Booking and finally the review (in this order)
+require "faker"
 
 puts "Cleaning database..."
-
 
 User.destroy_all
 puts "All record Destroyed"
 puts "____________________________"
-puts "Creating Users"
+puts "Creating 20 Users"
 
-user1 = User.new(email: "user1@test.com", username: "TamTam", password: "tototo")
-user1.save!
-user2 = User.new(email: "user2@test.com", username: "MatLaMenace", password: "tototo")
-user2.save!
-user3 = User.new(email: "user3@test.com", username: "Pierrot", password: "tototo")
-user3.save!
+20.times do
+  user = User.new(
+    email: Faker::Internet.unique.email,
+    username: Faker::Name.unique.name,
+    password: "password"
+  )
+  user.save!
+end
 
-puts "#{user1.username} created!"
-puts "#{user2.username} created!"
-puts "#{user3.username} created!"
+puts "Users created!"
 
-pokespot1 = Pokespot.new(name: "Kanto", address: "Chez Sacha", description: "C'est bien!", scarcity_drop_level: 70, price: 2, pokemon_type: "Fire", user: user1)
-pokespot1.save!
-puts "#{pokespot1.name} created!"
-pokespot2 = Pokespot.new(name: "Mon Jardin", address: "16 villa Gaudelet", description: "C'est cool!", scarcity_drop_level: 50, price: 10, pokemon_type: "Water", user: user2)
-pokespot2.save!
-puts "#{pokespot2.name} created!"
+puts "Creating 30 Pokespots"
 
-booking1 = Booking.new(start_date: Date.parse('17/9/2021'), end_date: Date.parse('20/9/2021'), pokespot: pokespot2, user: user3)
-booking1.save!
-puts "#{booking1.pokespot.name} created!"
-booking2 = Booking.new(start_date: Date.parse('18/9/2021'), end_date: Date.parse('21/9/2021'), pokespot: pokespot1, user: user2)
-booking2.save!
-puts "#{booking2.pokespot.name} created!"
+30.times do
+  pokespot = Pokespot.new(
+    name: Faker::Games::Pokemon.unique.location,
+    address: Faker::Address.unique.full_address,
+    description: Faker::JapaneseMedia::OnePiece.quote,
+    scarcity_drop_level: rand(1..100),
+    price: rand(1..500),
+    pokemon_type: Pokespot::TYPES.sample,
+    user_id: User.all.sample.id,
+    # photo: Faker::Placeholdit.image(size: '300x200'),
+  )
+  pokespot.save!
+end
+puts "30 Pokespots created!"
+
+puts "Creating 50 Bookings"
+
+50.times do
+  booking = Booking.new(
+    start_date: Faker::Date.between(from: 3.days.ago, to: 1.day.from_now),
+    end_date: Faker::Date.between(from: 1.day.ago, to: 5.days.from_now),
+    pokespot_id: Pokespot.all.sample.id,
+    user_id: User.all.sample.id
+  )
+  booking.save!
+end
+puts "50 Bookings created!"
+
+puts "Creating 100 Reviews"
+
+100.times do
+  review = Review.new(
+    rating: rand(1..5),
+    comments: Faker::TvShows::MichaelScott.quote,
+    booking_id: Booking.all.sample.id,
+  )
+  review.save!
+end
+puts "100 Bookings created!"
 
 puts "Finished!"
