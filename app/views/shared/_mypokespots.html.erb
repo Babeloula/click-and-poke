@@ -11,16 +11,33 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
-    <% @clients_booking.status_pending.each do |client_booking| %>
-      <%= client_booking %>
+    <% @clients_booking.status_Pending.each do |client_booking| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
+          <p><strong>Client name : </strong><%= client_booking.user.username%></p>
+          <p><strong>Start date : </strong><%= client_booking.start_date %></p>
+          <p><strong>End date : </strong><%= client_booking.end_date %></p>
+          <%= link_to "Accepted" do %>
+            <% client_booking.status = "Accepted" %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
   <div class="tab-pane fade" id="inprogress" role="tabpanel" aria-labelledby="inprogress-tab">
-    <% @clients_booking.status_accepted.each do |client_booking| %>
+    <% @clients_booking.status_Accepted.each do |client_booking| %>
+      <% if (client_booking.start_date <= Date.today) && (client_booking.end_date >= Date.today) %>
       <%= client_booking %>
+      <% end %>
     <% end %>
   </div>
   <div class="tab-pane fade" id="ended" role="tabpanel" aria-labelledby="ended-tab">
-
+    <% @clients_booking.each do |client_booking| %>
+      <% if client_booking.end_date == Date.today%>
+      <%= client_booking %>
+      <% end %>
+    <% end %>
   </div>
 </div>
