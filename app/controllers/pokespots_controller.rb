@@ -23,6 +23,15 @@ class PokespotsController < ApplicationController
     else
       @pokespots = policy_scope(Pokespot)
     end
+        # the `geocoded` scope filters only Pokespots with coordinates (latitude & longitude)
+    @markers = @pokespots.geocoded.map do |pokespot|
+      {
+        lat: pokespot.latitude,
+        lng: pokespot.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pokespot: pokespot }),
+        image_url: helpers.asset_url('pokeball.png')
+      }
+    end
   end
 
   def show
