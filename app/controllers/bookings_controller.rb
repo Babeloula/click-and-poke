@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show]
+  before_action :set_booking, only: [:show, :update]
 
   def show
   end
@@ -17,6 +17,16 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    if params[:status] == "Accepted"
+      @booking.status_Accepted!
+    else
+      @booking.status_Declined!
+    end
+    redirect_to dashboard_path
+  end
+
+
   private
 
   def set_booking
@@ -25,6 +35,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end

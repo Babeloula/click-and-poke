@@ -41,3 +41,33 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-green-accepted {
+  text-decoration: none;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #07d511;
+  transition: background 0.3s ease;
+  opacity: 0.6;
+}
+.btn-green-accepted:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.btn-red-declined {
+  text-decoration: none;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #d50707;
+  transition: background 0.3s ease;
+  opacity: 0.6;
+}
+.btn-red-declined:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+}

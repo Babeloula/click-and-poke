@@ -12,6 +12,8 @@ require "faker"
 puts "Cleaning database..."
 
 User.destroy_all
+Pokespot.destroy_all
+Booking.destroy_all
 puts "All record Destroyed"
 puts "____________________________"
 puts "Creating 20 Users"
