@@ -30,9 +30,12 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { loadDynamicBannerText } from '../components/banner';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   loadDynamicBannerText();
   initAutocomplete();
+  initFlatpickr();
 })
+
