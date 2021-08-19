@@ -8,9 +8,23 @@
   color: #FFDF32;
   border-color: 2px;
   text-shadow: 2px 2px 2px #396bba, -2px -1px 2px #396bba;
+  font-size: 40px;
 }
 
 #banner-typed-text {
 font-size: 35px;
-text-shadow: 10px;
+text-shadow: 2px 2px 2px grey;
+color: white;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 64px - 105px);
+}
+
+#text-2 {
+  display: flex;
+  width: 600px;
+  text-align: left;
+  font-size: 50px;
+  padding-left: 42px;
 }
