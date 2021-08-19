@@ -8,11 +8,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user_id = current_user.id
     @review.booking_id = @booking.id
     authorize @review
     if @review.save
-      redirect_to booking_path(@review)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
