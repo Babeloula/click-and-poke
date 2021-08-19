@@ -48,7 +48,7 @@ puts "30 Pokespots created!"
 
 puts "Creating 30 Bookings"
 
-30.times do
+50.times do
   booking = Booking.new(
     start_date: Faker::Date.between(from: 3.days.ago, to: 1.day.from_now),
     end_date: Faker::Date.between(from: 1.day.ago, to: 5.days.from_now),

@@ -14,7 +14,7 @@ class Pokespot < ApplicationRecord
   validates :pokemon_type, presence: true
   validates :scarcity_drop_level, presence: true
 
-  TYPES = ["Fire", "Water", "Grass", "Electric", "Poison", "Rock"]
+  TYPES = [["Fire", "Fire 🔥"], ["Water", "Water 💧"], ["Grass", "Grass 🌿"], ["Electric", "Electric ⚡️"], ["Poison", "Poison ☠️"], ["Rock", "Rock 🗿"]]
 
   after_commit :add_default_image, on: %i[create update]
 

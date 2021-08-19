@@ -1,9 +1,29 @@
 <div class="container">
   <div class="ml-5">
     <h1><%= @pokespot.name %></h1>
-
-    <p><strong>Type: </strong><%= @pokespot.pokemon_type %></p>
-    <p><strong>Address: </strong><%= @pokespot.address %></p>
+    <div class="card text mb-3 p-3">
+      <p><strong>Champion : <%= @pokespot.user.username %></strong></p>
+      <p><small>Description : <%= @pokespot.description %></small></p>
+      <p>Localisation : <%= @pokespot.address %></p>
+      <p>Type : <%= @pokespot.pokemon_type %></p>
+      <p>Scarcity Drop Level : <%= @pokespot.scarcity_drop_level %>%</p>
+      <span>Price : <%= @pokespot.price %>₽</span>
+    </div>
+    <div class="card text mb-3 p-3">
+      <p><strong>Reviews :</strong></p>
+      <% @reviews.each do |review| %>
+        <div class="d-flex align-items-center mb-2">
+          <%= cl_image_tag review.booking.user.photo.key, class:"card-trip-user avatar-bordered" %>
+          <p class="mb-0 p-2"><strong><%= review.booking.user.username %></strong></p>
+        </div>
+          <p><%= review.rating %> <i class="fas fa-star"></i>  <em>"<%= review.comments %>"</em></p>
+          <hr class="my-12"/>
+      <% end %>
+    </div>
+    <div class="card text mb-3 p-3">
+      <p><strong><%= @pokespot.user.username %></strong></p>
+      <p><small>Rank : <%= @pokespot.user.rank %></small></p>
+    </div>
   </div>
   <div class="card-cover"><% if @pokespot.photo.attached? %>
                       <%= cl_image_tag @pokespot.photo.key %>

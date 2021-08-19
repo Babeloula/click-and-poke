@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending" role="tab" aria-controls="pending" aria-selected="true">⁉️ Pending</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="inprogress-tab" data-toggle="tab" href="#inprogress" role="tab" aria-controls="inprogress" aria-selected="false">✅ Accepted</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ended-tab" data-toggle="tab" href="#ended" role="tab" aria-controls="ended" aria-selected="false">Ended </a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <%= render 'pages/partials/mypokespots_pending' %>
+  <%= render 'pages/partials/mypokespots_accepted' %>
+  <%= render 'pages/partials/mypokespots_ended' %>
+</div>
