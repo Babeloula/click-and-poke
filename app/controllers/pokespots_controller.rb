@@ -18,10 +18,13 @@ class PokespotsController < ApplicationController
   end
 
   def index
+    @pokespots = policy_scope(Pokespot)
+
     if params[:filter]
-      @pokespots = policy_scope(Pokespot).where(pokemon_type: params[:filter])
-    else
-      @pokespots = policy_scope(Pokespot)
+      @pokespots = @pokespots.where(pokemon_type: params[:filter])
+    elsif params.dig(:search, :address)
+      # @pokespots = @pokespots.where(address: params.dig(:search, :address))
+      @pokespots = @pokespots.near(params.dig(:search, :address), 500)
     end
         # the `geocoded` scope filters only Pokespots with coordinates (latitude & longitude)
     @markers = @pokespots.geocoded.map do |pokespot|

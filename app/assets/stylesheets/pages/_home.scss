@@ -28,3 +28,35 @@ color: white;
   font-size: 50px;
   padding-left: 42px;
 }
+
+// Simple form home page (address search bar)
+
+.string {
+  margin-top: 10px;
+}
+
+.form-control {
+  border-radius: 20px;
+  height: 50px;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#search_address::placeholder {
+  color: $pokewhite;
+  opacity: 0.6;
+}
+.ap-name {
+  color: black;
+}
+
+.ap-input-icon svg {
+    fill: #cfcfcf;
+    position: absolute;
+    top: 56%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
