@@ -1,0 +1,83 @@
+.card-product {
+  overflow: hidden;
+  height: 140px;
+  width: 630px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 0.5px solid rgba(0,0,0,0.15);
+
+  &:hover {
+    transition: 0.4s;
+    border: 0.5px solid #FFDF32;
+  }
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-infos {
+  margin-left: 20px;
+}
+
+#card-product-pending-mybook-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+#card-product-accepted-mybook-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+#card-product-ended-mybook-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+#card-product-pending-mypoke-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+#card-product-accepted-mypoke-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+#card-product-ended-mypoke-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}

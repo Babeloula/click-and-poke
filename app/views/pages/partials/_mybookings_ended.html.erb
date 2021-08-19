@@ -1,14 +1,18 @@
 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-  <% @bookings.each do |booking| %>
-    <% if booking.end_date <= Date.today || booking.status_Declined?%>
-      <div class="card-product">
-        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
-        <div class="card-product-infos">
-          <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
-          <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
-          <p><strong>Start date : </strong><%= booking.start_date %></p>
-          <p><strong>End date : </strong><%= booking.end_date %></p>
+  <div id="card-product-ended-mybook-flex">
+    <% @bookings.each do |booking| %>
+      <% if booking.end_date <= Date.today || booking.status_Declined?%>
+        <div class="card-product">
+          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
+          <div class="card-product-infos">
+            <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
+            <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
+            <p><strong>Start date : </strong><%= booking.start_date %></p>
+            <p><strong>End date : </strong><%= booking.end_date %></p>
+          </div>
         </div>
+       <% end %>
+    
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-gradient" data-toggle="modal" data-target="#exampleModal">
           Leave a Review
@@ -36,5 +40,5 @@
         </div>
       </div>
     <% end %>
-  <% end %>
+  </div>
 </div>

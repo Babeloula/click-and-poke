@@ -1,15 +1,17 @@
 <div class="tab-pane fade" id="ended" role="tabpanel" aria-labelledby="ended-tab">
-  <% @clients_booking.each do |client_booking| %>
-    <% if client_booking.end_date <= Date.today && client_booking.status_Accepted? %>
-      <div class="card-product">
-        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(client_booking) %>
-        <div class="card-product-infos">
-          <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
-          <p><strong>Client name : </strong><%= client_booking.user.username%></p>
-          <p><strong>Start date : </strong><%= client_booking.start_date %></p>
-          <p><strong>End date : </strong><%= client_booking.end_date %></p>
+  <div id="card-product-ended-mypoke-flex">
+    <% @clients_booking.each do |client_booking| %>
+      <% if client_booking.end_date <= Date.today && client_booking.status_Accepted? %>
+        <div class="card-product">
+          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(client_booking) %>
+          <div class="card-product-infos">
+            <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
+            <p><strong>Client name : </strong><%= client_booking.user.username%></p>
+            <p><strong>Start date : </strong><%= client_booking.start_date %></p>
+            <p><strong>End date : </strong><%= client_booking.end_date %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
