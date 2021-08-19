@@ -1,20 +1,24 @@
-<div class="content-wrapper">
-  <ul id="tabs-nav-first" class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="tabs-btn-first" class="nav-item" role="presentation">
-      <a  class="nav-link active" id="mybookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-controls="mybookings" aria-selected="true">My Bookings</a>
-    </li>
-    <li class="tabs-btn-first" class="nav-item" role="presentation">
-      <a class="nav-link" id="mypokespots-tab" data-toggle="tab" href="#mypokespots" role="tab" aria-controls="mypokespots" aria-selected="false">My Pokespots</a>
-    </li>
-  </ul>
+<div id="background-dashboard">
+  <div class="container">
+    <div id="container-dashboard" class="content-wrapper">
+      <ul id="tabs-nav-first" class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="tabs-btn-first" class="nav-item" role="presentation">
+          <a  class="nav-link active" id="mybookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-controls="mybookings" aria-selected="true">My Bookings</a>
+        </li>
+        <li class="tabs-btn-first" class="nav-item" role="presentation">
+          <a class="nav-link" id="mypokespots-tab" data-toggle="tab" href="#mypokespots" role="tab" aria-controls="mypokespots" aria-selected="false">My Pokespots</a>
+        </li>
+      </ul>
 
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="mybookings" role="tabpanel" aria-labelledby="mybookings-tab">
-      <%= render 'pages/partials/mybookings' %>
-    </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="mybookings" role="tabpanel" aria-labelledby="mybookings-tab">
+          <%= render 'pages/partials/mybookings' %>
+        </div>
 
-    <div class="tab-pane fade" id="mypokespots" role="tabpanel" aria-labelledby="mypokespots-tab">
-      <%= render 'pages/partials/mypokespots' %>
+        <div class="tab-pane fade" id="mypokespots" role="tabpanel" aria-labelledby="mypokespots-tab">
+          <%= render 'pages/partials/mypokespots' %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
