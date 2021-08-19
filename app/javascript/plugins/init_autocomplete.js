@@ -5,6 +5,12 @@ const initAutocomplete = () => {
   if (addressInput) {
     places({ container: addressInput });
   }
+
+  const addressInput_2 = document.getElementById('pokespot_address');
+  if (addressInput_2) {
+    places({ container: addressInput_2 });
+  }
+
 };
 
 export { initAutocomplete };
