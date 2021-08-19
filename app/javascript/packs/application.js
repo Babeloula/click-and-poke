@@ -24,15 +24,15 @@ require("channels")
 
 // External imports
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 import "bootstrap";
 
-// import { showModal } from '../components/modal';
-import { loadDynamicBannerText } from '../components/banner';
+// Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   loadDynamicBannerText();
-  // showModal();
+  initAutocomplete();
 })
