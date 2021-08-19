@@ -1,4 +1,22 @@
-// Specific CSS for your home-page
+//Title
+
+h1 {
+  padding: 30px 0 8px;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  left: 7%;
+  bottom: 16px;
+  width: 150px;
+  height: 14px;
+  transform: skew(-12deg) translateX(-50%);
+  background: rgba(238,111,87,0.5);
+  z-index: -1;
+}
+
 #second-title {
   padding-left: 36px;
   padding-top: 5px;
@@ -11,16 +29,19 @@
   font-size: 40px;
 }
 
+// Typed.js
 #banner-typed-text {
 font-size: 35px;
-text-shadow: 2px 2px 2px grey;
+text-shadow: 1px 1px 1px $pokewhite;
 color: white;
 }
 
+// Navbar + footer take all screen
 .content-wrapper {
-  min-height: calc(100vh - 64px - 105px);
+  min-height: calc(100vh - 90px - 130px);
 }
 
+// text on banner
 #text-2 {
   display: flex;
   width: 600px;
@@ -35,7 +56,7 @@ color: white;
   margin-top: 10px;
 }
 
-.form-control {
+.ap-input {
   border-radius: 20px;
   height: 50px;
   background-color: transparent;

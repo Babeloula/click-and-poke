@@ -1,0 +1,44 @@
+#h1new {
+  padding: 60px 0 8px;
+  position: relative;
+}
+
+#h1new::before {
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 16px;
+  width: 170px;
+  height: 14px;
+  transform: skew(-12deg) translateX(-50%);
+  background: rgba(238,111,87,0.5);
+  z-index: -1;
+}
+
+#div_photo {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 30%;
+}
+
+#pokespot_photo {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_login2 {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 10px 60px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  font-size: 20px;
+
+  &:hover {
+    background-color: darkblue;
+    color: yellow;
+  }
+}
