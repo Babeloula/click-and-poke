@@ -10,6 +10,13 @@
   text-align: center;
 }
 
+#navbarDropdown {
+  transition: 0.8s;
+  &:hover {
+  transform: rotate(180deg);
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   padding-left: 50px;
@@ -21,6 +28,13 @@
 
 .dropdown {
   cursor: pointer;
+}
+
+.dropdown-item {
+  transition: 0.5s;
+  &:hover {
+    position: left 10%;
+  }
 }
 
 .nav-item-center {
