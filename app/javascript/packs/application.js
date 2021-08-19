@@ -24,27 +24,15 @@ require("channels")
 
 // External imports
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 import "bootstrap";
 
+// Internal imports, e.g:
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  // [...]
-  loadDynamicBannerText();
-});
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
-import { initMapbox } from '../plugins/init_mapbox';
-
-document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  loadDynamicBannerText();
+  initAutocomplete();
 })
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
