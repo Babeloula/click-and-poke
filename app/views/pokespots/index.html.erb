@@ -31,12 +31,14 @@
                     <%= cl_image_tag pokespot.photo.key %>
                     <% end %></div>
           <div class="card-trip-infos">
-            <div>
-              <h2><%= pokespot.name %></h2>
-              <h3>Pokemon type: <%= pokespot.pokemon_type%></h3>
-              <p><%= pokespot.description %></p>
+            <div class="d-flex">
+              <div>
+                <h2><%= pokespot.name %></h2>
+                <h3>Pokemon type: <%= pokespot.pokemon_type%></h3>
+                <p><%= pokespot.description %></p>
+              </div>
+              <h2 class="align-self-end"><%= pokespot.price %>₽</h2>
             </div>
-            <h2 class="card-trip-pricing"><%= pokespot.price %>₽</h2>
             <% if pokespot.user.photo.attached? %>
                     <%= cl_image_tag pokespot.user.photo.key, class:"card-trip-user avatar-bordered" %>
                     <% end%>
