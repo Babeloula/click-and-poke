@@ -36,6 +36,7 @@ class PokespotsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @reviews = @pokespot.reviews
   end
 
   def edit

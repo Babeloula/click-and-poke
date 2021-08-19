@@ -27,24 +27,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import "bootstrap";
 
+// import { showModal } from '../components/modal';
 import { loadDynamicBannerText } from '../components/banner';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  // [...]
-  loadDynamicBannerText();
-});
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  loadDynamicBannerText();
+  // showModal();
 })
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
