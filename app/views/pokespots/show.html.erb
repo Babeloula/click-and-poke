@@ -16,7 +16,7 @@
           <%= cl_image_tag review.booking.user.photo.key, class:"card-trip-user avatar-bordered" %>
           <p class="mb-0 p-2"><strong><%= review.booking.user.username %></strong></p>
         </div>
-          <p><%= review.rating %> <i class="fas fa-star"></i>  <em>"<%= review.comments %>"</em></p>
+          <p><%= review.rating %> <i class="fas fa-star" id="rating"></i>  <em>"<%= review.comments %>"</em></p>
           <hr class="my-12"/>
       <% end %>
     </div>
