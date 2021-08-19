@@ -1,4 +1,5 @@
 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div id="card-product-pending-mybook-flex">
     <% @bookings.status_Pending.each do |booking| %>
       <div class="card-product">
         <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
@@ -11,4 +12,5 @@
         </div>
       </div>
     <% end %>
+  </div>
 </div>
