@@ -22,7 +22,7 @@
         <h2><%= link_to "🗿", params[:filter].present? ? pokespots_path : pokespots_path(filter: "Rock") %></h2>
       </li>
     </ul>
-  
+
     <div class="cards">
       <% @pokespots.each do |pokespot| %>
       <div class="card-trip">
