@@ -1,19 +1,11 @@
 <%# Banner %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=asset_path('pokemon-background-dragonite.jpg')%>);">
+<div class="banner" id="home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=asset_path('pokemon-background-dragonite.jpg')%>);">
   <div class="container">
     <h1 id="blue-yellow-color">You want to</h1>
       <p>
         <span id="banner-typed-text"></span>
       </p>
-      <%# <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query"/>
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    </form> %>
 
     <%= simple_form_for :search, url: pokespots_path, method: :get do |f| %>
       <%= f.input :address, label: false, placeholder: "Enter your address, we'll look for the nearest Pokespot" %>
@@ -21,13 +13,6 @@
     <% end %>
   </div>
 </div>
-
-<%# Pokeball + Animation %>
-  <%# <div class="center-on-page">
-    <div class="pokeball">
-      <div class="pokeball__button"></div>
-    </div>
-  </div> %>
 
 <%# Titles and blocks %>
 <div>

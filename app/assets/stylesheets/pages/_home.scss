@@ -38,6 +38,12 @@ color: white;
 
 // Navbar + footer take all screen
 .content-wrapper {
+  padding-top: 70px;
+  min-height: calc(100vh - 90px - 130px);
+}
+
+.content-wrapper.home {
+  padding-top: 0px;
   min-height: calc(100vh - 90px - 130px);
 }
 
