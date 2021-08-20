@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.booking_id = @booking.id
     authorize @review
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to dashboard_path
     else
       flash[:notice] = "Something went wrong... Please try again! 👍"
       redirect_to booking_path(@booking)
