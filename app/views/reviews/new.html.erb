@@ -1,9 +1,0 @@
-<h1>Create a new Review:</h1>
-
-<div class="container">
-  <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :rating, hint: 'Rate this PokeSpot between 1 and 5' %>
-    <%= f.input :comments %>
-    <%= f.submit "Submit Review", class: "btn btn-primary" %>
-  <% end %>
-</div>

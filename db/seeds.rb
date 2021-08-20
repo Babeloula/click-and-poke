@@ -18,10 +18,17 @@ puts "All record Destroyed"
 puts "____________________________"
 puts "Creating 10 Users"
 
+User.create!(
+  email: "sacha@pokemon.com",
+  username: "Sacha",
+  password: "password",
+  rank: "Master"
+)
+
 10.times do
   user = User.new(
     email: Faker::Internet.unique.email,
-    username: Faker::Name.unique.name,
+    username: Faker::Name.unique.first_name,
     password: "password",
     rank: User::RANK.sample
   )
@@ -41,34 +48,34 @@ puts "Creating 30 Pokespots"
     price: rand(1..500),
     pokemon_type: Pokespot::TYPES.sample,
     user_id: User.all.sample.id
-    # photo: Faker::Placeholdit.image(size: '300x200'),
   )
 end
 puts "30 Pokespots created!"
 
-puts "Creating 30 Bookings"
+puts "Creating 100 Bookings"
 
-50.times do
+100.times do
   booking = Booking.new(
     start_date: Faker::Date.between(from: 3.days.ago, to: 1.day.from_now),
     end_date: Faker::Date.between(from: 1.day.ago, to: 5.days.from_now),
     pokespot_id: Pokespot.all.sample.id,
-    user_id: User.all.sample.id
+    user_id: User.all.sample.id,
+    status: [0, 1].sample
   )
   booking.save!
 end
-puts "30 Bookings created!"
+puts "100 Bookings created!"
 
-puts "Creating 50 Reviews"
+puts "Creating 300 Reviews"
 
-50.times do
+300.times do
   review = Review.new(
-    rating: rand(1..5),
+    rating: rand(2..5),
     comments: Faker::TvShows::MichaelScott.quote,
-    booking_id: Booking.all.sample.id,
+    booking_id: Booking.all.sample.id
   )
   review.save!
 end
-puts "100 Bookings created!"
+puts "300 Bookings created!"
 
 puts "Finished!"

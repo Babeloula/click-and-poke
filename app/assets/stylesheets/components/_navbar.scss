@@ -1,6 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: white;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon.home {
+  background-color: transparent;
+  color: white;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+  color: black;
+}
+
+.navbar-lewagon-white.home {
+  background-color: white;
+  color: black;
 }
 
 #navbarSupportedContent {
@@ -8,6 +24,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+#navbarDropdown {
+  transition: 0.8s;
+  &:hover {
+  transform: rotate(180deg);
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,6 +46,13 @@
   cursor: pointer;
 }
 
+.dropdown-item {
+  transition: 0.5s;
+  &:hover {
+    position: left 10%;
+  }
+}
+
 .nav-item-center {
   display: flex;
   text-decoration: none;
@@ -34,4 +64,59 @@
   }
 }
 
+.navbar-nav p {
+  padding-top: 8px;
+  margin-bottom: 0px;
+  padding-right: 5px;
+}
+
 .nav-item-center a { color: inherit; }
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .nav-item-center {
+    display: none;
+  }
+  .pokelogo {
+    display: none;
+  }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .nav-item-center {
+    display: none;
+  }
+  .pokelogo {
+    display: block;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .nav-item-center {
+    display: none;
+  }
+  .pokelogo {
+    display: block;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .nav-item-center {
+    display: flex;
+  }
+  .pokelogo {
+    display: none;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .pokelogo {
+    display: none;
+  }
+}

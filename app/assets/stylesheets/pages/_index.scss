@@ -1,10 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "tab";
-@import "card_product";
 @import "mypokespots";
+@import "dashboard";
 @import "session_new";
 @import "new_pokespot";
+@import "review";
 
 a:hover {
   text-decoration: none;

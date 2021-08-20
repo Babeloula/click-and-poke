@@ -1,20 +1,27 @@
 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-  <% @bookings.each do |booking| %>
-    <% if booking.end_date <= Date.today || booking.status_Declined?%>
-      <div class="card-product">
-        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
-        <div class="card-product-infos">
-          <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
-          <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
-          <p><strong>Start date : </strong><%= booking.start_date %></p>
-          <p><strong>End date : </strong><%= booking.end_date %></p>
+  <div id="card-product-ended-mybook-flex">
+    <% @bookings.each do |booking| %>
+      <% if booking.end_date <= Date.today || booking.status_Declined?%>
+        <div class="card-product">
+          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), pokespot_path(booking.pokespot) %>
+          <div class="card-product-infos">
+            <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
+            <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
+            <p><strong>Start date : </strong><%= booking.start_date %></p>
+            <p><strong>End date : </strong><%= booking.end_date %></p>
+          </div>
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-gradient" data-toggle="modal" data-target="#exampleModal">
-          Leave a Review
-        </button>
-
-        <!-- Modal -->
+          <!-- Button trigger modal -->
+        <% if booking.reviews.where(booking_id: booking.id) == nil %>
+          <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
+            Leave a Review
+          </button>
+        <% else %>
+          <button class="btn-review-done">
+            Thanks for your Review 🙌
+          </button>
+        <% end %>
+          <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -28,13 +35,15 @@
                 <%= simple_form_for [booking, Review.new] do |f| %>
                   <%= f.input :rating, hint: 'Rate this PokeSpot between 1 and 5' %>
                   <%= f.input :comments %>
-                  <%= f.submit "Submit Review", class: "btn btn-gradient" %>
+                <div class="text-center">
+                  <%= f.submit "Submit Review", class: "btn-review" %>
+                </div>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

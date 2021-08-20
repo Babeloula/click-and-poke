@@ -1,3 +1,13 @@
 .container {
   width: 800px;
 }
+
+#container-dashboard {
+  border-left: 2px solid rgba($color: #000000, $alpha: 0.03);
+  border-right: 2px solid rgba($color: #000000, $alpha: 0.03);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
+  padding-bottom: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}

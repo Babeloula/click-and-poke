@@ -1,0 +1,93 @@
+#tabs-nav-first {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-left: none;
+  border-right: none;
+  // margin: -1px;
+  &:scope {
+    border: none;
+  }
+}
+
+.tabs-btn-first a {
+  color: black;
+  font-family: sans-serif;
+  font-size: 23px;
+  line-height: 75px;
+  &:hover {
+    text-decoration: none;
+    transition: 0.3s;
+    background-color: rgba($color: #000000, $alpha: 0.01);
+  }
+}
+
+#tabs-nav-second {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-left: none;
+  border-right: none;
+  margin-top: -1px;
+}
+
+.tabs-btn-second a {
+  color: black;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 40px;
+  &:hover {
+    text-decoration: none;
+    transition: 0.3s;
+    background-color: rgba($color: #000000, $alpha: 0.01);
+    background-size: 10px;
+  }
+}
+
+#mybookings-tab:focus {
+  border-bottom: 2px solid black;
+  border-left: none;
+  border-right: none;
+}
+#mypokespots-tab:focus {
+  border-bottom: 2px solid black;
+  border-left: none;
+  border-right: none;
+}
+#pending-tab:focus {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+#inprogress-tab:focus {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+#ended-tab:focus {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+
+#home-tab:focus {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+#profile-tab:focus {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+#contact-tab:focus {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}

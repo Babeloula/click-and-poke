@@ -30,7 +30,13 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { loadDynamicBannerText } from '../components/banner';
-import { initFlatpickr } from "../plugins/flatpickr";
+import { initFlatpickr } from '../plugins/flatpickr';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  initUpdateNavbarOnScroll();
+});
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
@@ -38,4 +44,3 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   initFlatpickr();
 })
-
