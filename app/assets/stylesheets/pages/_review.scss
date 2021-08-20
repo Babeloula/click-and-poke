@@ -1,15 +1,28 @@
 .btn-review {
-  border: 2px solid black;
+  border: 1px solid darkgrey;
+  color: darkgray;
   border-radius: 5px;
   background-color: transparent;
-  padding: 10px 60px;
+  padding: 5px 15px;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 20px;
+  transition: 0.1s;
   &:hover {
-    background-color: darkblue;
-    color: yellow;
+    background-color: #FFDF32;
+    color: #386BBA;
   }
+}
+
+.btn-review-done {
+  border: 1px solid darkgrey;
+  color: darkgray;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 5px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
 #review-show {

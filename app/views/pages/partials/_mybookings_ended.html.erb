@@ -2,20 +2,27 @@
   <div id="card-product-ended-mybook-flex">
     <% @bookings.each do |booking| %>
       <% if booking.end_date <= Date.today || booking.status_Declined?%>
-        <div class="card-product">
-          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
-          <div class="card-product-infos">
-            <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
-            <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
-            <p><strong>Start date : </strong><%= booking.start_date %></p>
-            <p><strong>End date : </strong><%= booking.end_date %></p>
+        <div class="card-product-reviews">
+          <div id="card-flex-reviews">
+            <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
+            <div class="card-product-infos">
+              <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
+              <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>
+              <p><strong>Start date : </strong><%= booking.start_date %></p>
+              <p><strong>End date : </strong><%= booking.end_date %></p>
+            </div>
           </div>
+        <% if booking.reviews.where(booking_id: booking.id) == nil %>
+          <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
+            Leave a Review
+          </button>
+        <% else %>
+          <button class="btn-review-done">
+            Thanks for your Review 🙌
+          </button>
+        <% end %>
         </div>
           <!-- Button trigger modal -->
-        <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
-        Leave a Review
-        </button>
-
           <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">

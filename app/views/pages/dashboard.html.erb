@@ -1,22 +1,58 @@
-<div id="background-dashboard">
-  <div class="container">
-    <div id="container-dashboard" class="content-wrapper">
-      <ul id="tabs-nav-first" class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="tabs-btn-first" class="nav-item" role="presentation">
-          <a  class="nav-link active" id="mybookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-controls="mybookings" aria-selected="true">My Bookings</a>
-        </li>
-        <li class="tabs-btn-first" class="nav-item" role="presentation">
-          <a class="nav-link" id="mypokespots-tab" data-toggle="tab" href="#mypokespots" role="tab" aria-controls="mypokespots" aria-selected="false">My Pokespots</a>
-        </li>
-      </ul>
+<div class="background-dashboard">
+  <div id="dashboard-flex-box">
 
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="mybookings" role="tabpanel" aria-labelledby="mybookings-tab">
-          <%= render 'pages/partials/mybookings' %>
-        </div>
+    <div class="cards" id="card-profil">
+      <div id="card-trip-profil" class="card-trip d-flex flex-column">
+          <div class="card-price d-flex justify-content-between">
+            <h2>Profil page</h2>
+          </div>
+          <div class="card-cover align-items-center">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key %>
+            <% end %>
+          </div>
+          <div class="card-trip-infos">
+            <div class="d-flex">
+              <div>
+                <h2><strong>🖖 Hey </strong>
+                <%= current_user.username %>!</h2>
+                <hr>
+                <p><strong>Reviews Number:</strong>
+                <%= current_user.reviews.count %></p>
+                <hr>
+                <p><strong>Pokespots Number:</strong>
+                <%= current_user.pokespots.count %></p>
+                <hr>
+                <p><strong>Bookings Number:</strong>
+                <%= current_user.bookings.count %></p>
+                <hr>
+                <p><strong>Rank:</strong>
+                <%= current_user.rank %></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
 
-        <div class="tab-pane fade" id="mypokespots" role="tabpanel" aria-labelledby="mypokespots-tab">
-          <%= render 'pages/partials/mypokespots' %>
+    <div class="container">
+      <div id="container-dashboard" class="content-wrapper">
+        <ul id="tabs-nav-first" class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="tabs-btn-first" class="nav-item" role="presentation">
+            <a  class="nav-link active" id="mybookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-controls="mybookings" aria-selected="true">My Bookings</a>
+          </li>
+          <li class="tabs-btn-first" class="nav-item" role="presentation">
+            <a class="nav-link" id="mypokespots-tab" data-toggle="tab" href="#mypokespots" role="tab" aria-controls="mypokespots" aria-selected="false">My Pokespots</a>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="mybookings" role="tabpanel" aria-labelledby="mybookings-tab">
+            <%= render 'pages/partials/mybookings' %>
+          </div>
+
+          <div class="tab-pane fade" id="mypokespots" role="tabpanel" aria-labelledby="mypokespots-tab">
+            <%= render 'pages/partials/mypokespots' %>
+          </div>
         </div>
       </div>
     </div>

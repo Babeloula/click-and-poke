@@ -1,17 +1,20 @@
 <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
   <div id="card-product-pending-mypoke-flex">
     <% @clients_booking.status_Pending.each do |client_booking| %>
-      <div class="card-product">
-        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(client_booking) %>
-        <div class="card-product-infos">
-          <div>
-            <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
-            <p><strong>Client name : </strong><%= client_booking.user.username%></p>
-            <p><strong>Start date : </strong><%= client_booking.start_date %></p>
-            <p><strong>End date : </strong><%= client_booking.end_date %></p>
+
+      <div class="card-product-reviews">
+        <div id="card-flex-acc-dec">
+          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(client_booking) %>
+          <div class="card-product-infos">
+            <div>
+              <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
+              <p><strong>Client name : </strong><%= client_booking.user.username%></p>
+              <p><strong>Start date : </strong><%= client_booking.start_date %></p>
+              <p><strong>End date : </strong><%= client_booking.end_date %></p>
+            </div>
           </div>
         </div>
-        <div>
+        <div id="card-div-acc-dec">
           <ul>
             <li class="btn btn-green-accepted"><%= link_to "Accepted", booking_path(client_booking, status: "Accepted"), method: :patch %></li>
             <li class="btn btn-red-declined"><%= link_to "Delined", booking_path(client_booking), method: :patch %></li>

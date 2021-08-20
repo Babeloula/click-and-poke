@@ -1,0 +1,63 @@
+<div class="container">
+  <h1><%= @pokespot.name %></h1>
+  <div>
+
+  </div>
+    <div class="card-cover"><% if @pokespot.photo.attached? %>
+                        <%= cl_image_tag @pokespot.photo.key %>
+                        <% end %>
+                        </div>
+    <div class="container-md d-flex flex-row justify-content-around px-0 py-3">
+      <div>
+        <div class="card text d-flex mb-3 p-3">
+
+          <% if @pokespot.user.photo.attached? %>
+                      <%= cl_image_tag @pokespot.user.photo.key, class:"avatar-bordered" %>
+                      <% end%>
+          <div>
+            <p><strong>Champion : <%= @pokespot.user.username %></strong></p>
+            <p><small>Rank : <%= @pokespot.user.rank %></small></p>
+          </div>
+        </div>
+
+        <p><small>Description : <%= @pokespot.description %></small></p>
+        <p>Scarcity Drop Level : <%= @pokespot.scarcity_drop_level %>%</p>
+      <div>
+        <p>Localisation : <%= @pokespot.address %></p>
+        <p>Type : <%= @pokespot.pokemon_type %></p>
+        <p>Price: <span id="flat-price-per-night"><%= @pokespot.price %></span>₽</p>
+        <p>Number of days: <span id="total-nights">0</span></p>
+        <p>Total price: <span id="total-price">0</span>₽</p>
+      </div>
+      </div>
+        <div class="card mt-0" id="checkout">
+          <%= simple_form_for [@pokespot, @booking] do |f| %>
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, class: "btn btn-primary btn-lg btn-block"%>
+          <% end %>
+        </div>
+      </div>
+      <div class="card text mb-3 p-3">
+        <p><strong>Reviews :</strong></p>
+        <% @reviews.each do |review| %>
+          <div class="d-flex align-items-center mb-2">
+            <%= cl_image_tag review.booking.user.photo.key, class:"card-trip-user avatar-bordered" %>
+            <p class="mb-0 p-2"><strong><%= review.booking.user.username %></strong></p>
+          </div>
+            <p><%= review.rating %> <i class="fas fa-star"></i>  <em>"<%= review.comments %>"</em></p>
+            <hr class="my-12"/>
+        <% end %>
+      </div>
+      <% if policy(@pokespot).update? %>
+        <%= link_to "Update Pokespot",  edit_pokespot_path, class: "btn btn-primary" %>
+      <% end %>
+      <% if policy(@pokespot).destroy? %>
+        <%= link_to "Delete Pokespot",
+                    pokespot_path(@pokespot),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
