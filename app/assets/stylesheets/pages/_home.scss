@@ -81,3 +81,9 @@ color: white;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+// div 2 home (become a pokehost)
+
+.card-pokehost:hover {
+    transform: scale(0.95);
+  }
