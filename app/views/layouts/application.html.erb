@@ -20,9 +20,9 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
-      <div class="content-wrapper">
-        <%= yield %>
-      </div>
+    <div class="content-wrapper <%= params[:action] %>">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 
