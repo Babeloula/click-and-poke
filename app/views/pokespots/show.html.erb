@@ -1,73 +1,136 @@
-<div class="container">
-  <div class="ml-5">
-    <h1><%= @pokespot.name %></h1>
-    <div class="card text mb-3 p-3">
-      <p><strong>Champion : <%= @pokespot.user.username %></strong></p>
-      <p><small>Description : <%= @pokespot.description %></small></p>
-      <p>Localisation : <%= @pokespot.address %></p>
-      <p>Type : <%= @pokespot.pokemon_type %></p>
-      <p>Scarcity Drop Level : <%= @pokespot.scarcity_drop_level %>%</p>
-      <span>Price : <%= @pokespot.price %>₽</span>
-    </div>
-    <div class="card text mb-3 p-3">
-      <p><strong>Reviews :</strong></p>
-      <% @reviews.each do |review| %>
-        <div class="d-flex align-items-center mb-2">
-          <%= cl_image_tag review.booking.user.photo.key, class:"card-trip-user avatar-bordered" %>
-          <p class="mb-0 p-2"><strong><%= review.booking.user.username %></strong></p>
+<div class="d-flex">
+  <div id="pokedex">
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
         </div>
-          <p><%= review.rating %> <i class="fas fa-star"></i>  <em>"<%= review.comments %>"</em></p>
-          <hr class="my-12"/>
-      <% end %>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+        <div id="picture">
+          <div id="picture-img">
+          <% if @pokespot.photo.attached? %>
+                        <%= cl_image_tag @pokespot.photo.key, height:170 %>
+                        <% end %>
+                        </div>
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      <div id="bigbluebutton"></div>
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
     </div>
-    <div class="card text mb-3 p-3">
-      <p><strong><%= @pokespot.user.username %></strong></p>
-      <p><small>Rank : <%= @pokespot.user.rank %></small></p>
+    <div id="right">
+      <div id="stats">
+        <strong>Name: </strong><%= @pokespot.name %><br/>
+        <strong>Pokespot description: </strong><br/>
+        <%= @pokespot.description %>
+      </div>
+      <div id="blueButtons1">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="blueButtons2">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="miniButtonGlass4"></div>
+      <div id="miniButtonGlass5"></div>
+      <div id="barbutton3"></div>
+      <div id="barbutton4"></div>
+      <div id="yellowBox1" class="p-2"><strong>Type: </strong><%= @pokespot.pokemon_type %></div>
+      <div id="yellowBox2" class="p-2"><strong>Scarcity: </strong><%= @pokespot.scarcity_drop_level %>%</div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
     </div>
+    </div>
+        <div class="card mt-3 p-3" id="checkout">
+              <%= simple_form_for [@pokespot, @booking] do |f| %>
+                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <div class="mt-3 ml-2">
+                    <div class="d-flex justify-content-between border-bottom mr-2">
+                      <p><strong>Price per day: </strong></p><p><span id="flat-price-per-night"><%= @pokespot.price %></span>₽</p>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom mt-3 mr-2">
+                      <p><strong>Number of days: </strong></p><p><span id="total-nights">0</span></p>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3 mr-2">
+                      <p><strong>Total price: </strong></p><p><span id="total-price">0</span>₽</p>
+                    </div>
+                </div>
+                <%= f.button :submit, class: "btn btn-primary btn-lg btn-block"%>
+              <% end %>
+            </div>
+        <div>
   </div>
-  <div class="card-cover"><% if @pokespot.photo.attached? %>
-                      <%= cl_image_tag @pokespot.photo.key %>
-                      <% end %>
-                      </div>
-  <div class="container-md d-flex flex-row justify-content-around py-3">
-    <div>
-      <div class="card text mb-3 p-3">
-        <% if @pokespot.user.photo.attached? %>
-                    <%= cl_image_tag @pokespot.user.photo.key, class:"avatar-bordered" %>
-                    <% end%>
-        <p><strong>Champion : <%= @pokespot.user.username %></strong></p>
-      </div>
-
-        <p><small>Description : <%= @pokespot.description %></small></p>
-        <p>Scarcity Drop Level : <%= @pokespot.scarcity_drop_level %>%</p>
-      <div>
-        <p>Price: <span id="flat-price-per-night"><%= @pokespot.price %></span>₽</p>
-        <p>Number of days: <span id="total-nights">0</span></p>
-        <p>Total price: <span id="total-price">0</span>₽</p>
-      </div>
-      <div class="card text mb-3 p-3">
-        <p><strong><%= @pokespot.user.username %></strong></p>
-        <p><small>Rank : <%= @pokespot.user.rank %></small></p>
-      </div>
-    </div>
-      <div class="card mt-0" id="checkout">
-        <%= simple_form_for [@pokespot, @booking] do |f| %>
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.button :submit, class: "btn btn-primary btn-lg btn-block"%>
+</div>
+<div class="card text m-5 p-3">
+   <p><strong>Reviews :</strong></p>
+          <% @reviews.each do |review| %>
+            <div class="d-flex align-items-center mb-2">
+              <%= cl_image_tag review.booking.user.photo.key, class:"card-trip-user avatar-bordered" %>
+              <p class="mb-0 p-2"><strong><%= review.booking.user.username %></strong></p>
+            </div>
+              <p><%= review.rating %> <i class="fas fa-star"></i>  <em>"<%= review.comments %>"</em></p>
+              <hr class="my-12"/>
+          <% end %>
+        </div>
+        <% if policy(@pokespot).update? %>
+          <%= link_to "Update Pokespot",  edit_pokespot_path, class: "btn btn-primary" %>
         <% end %>
-      </div>
-    </div>
-
-    <% if policy(@pokespot).update? %>
-      <%= link_to "Update Pokespot",  edit_pokespot_path, class: "btn btn-primary" %>
-    <% end %>
-    <% if policy(@pokespot).destroy? %>
-      <%= link_to "Delete Pokespot",
-                  pokespot_path(@pokespot),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" },
-                  class: "btn btn-danger" %>
-    <% end %>
-  </div>
+        <% if policy(@pokespot).destroy? %>
+          <%= link_to "Delete Pokespot",
+                      pokespot_path(@pokespot),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: "btn btn-danger" %>
+        <% end %>
 </div>

@@ -3,7 +3,7 @@
     <%= f.input :description, label: "Tell hunters about this PokeSpot" %>
     <%= f.input :address, label: "Where is it located?", hint: "Give a precise address with postal code and country 🌎" %>
     <%= f.input :price, hint: 'Indicate the price per day hunters will have to pay to hunt at your land' %>
-    <%= f.input :pokemon_type, as: :radio_buttons, collection: Pokespot::TYPES, label_method: :second, value_method: :first, label: "What's the main Pokemon type hunters will find at this PokeSpot?" %>
+    <%= f.input :pokemon_type, as: :radio_buttons, collection: Pokespot::TYPES, label: "What's the main Pokemon type hunters will find at this PokeSpot?" %>
     <%= f.input :scarcity_drop_level, hint: 'Indicate the approx. % of chances hunter will get to catch a rare Pokemon ✨' %>
     <div id="div_photo">
       <%= f.input :photo, as: :file, label: "Share a nice photo of the place 🏞 " %>
