@@ -2,7 +2,9 @@
   <div id="card-product-accepted-mypoke-flex">
     <% @clients_booking.status_Accepted.each do |client_booking| %>
       <div class="card-product">
-        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), pokespot_path(client_booking.pokespot) %>
+        <% if client_booking.pokespot.photo.attached? %>
+          <%= cl_image_tag client_booking.pokespot.photo.key %>
+        <% end %>
         <div class="card-product-infos">
           <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
           <p><strong>Client username : </strong><%= client_booking.user.username%></p>
