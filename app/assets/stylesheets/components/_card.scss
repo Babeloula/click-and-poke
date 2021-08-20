@@ -23,15 +23,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-#checkout {
-  position: sticky;
-  top: 20px;
-  align-self: flex-start;
-  width: 600px;
-  margin: 20px;
-  border-radius: 10px;
-}
-
 .card-trip {
   overflow: hidden;
   background: white;
@@ -63,14 +54,15 @@
   margin: 10px;
 }
 
+#rating {
+  color: #FFE031;
+}
+
 #checkout {
   position: sticky;
   top: 20px;
   align-self: flex-start;
-  width: 600px;
+  width: 300px;
   margin: 20px;
-}
-
-#rating {
-  color: #FFE031;
+  border-radius: 10px;
 }

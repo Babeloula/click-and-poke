@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
       flash[:notice] = "Booking confirmed, CATCH'EM ALL 😁😁😁"
       redirect_to pokespots_path
     else
-      render :new
+      redirect_to pokespots_path
     end
   end
 

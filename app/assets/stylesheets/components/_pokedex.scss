@@ -284,25 +284,29 @@
 	div#picture
 	{
 		height: 175px;
-		width: 254px;
+		width: 220px;
 		margin-top: 20px;
 		margin-bottom: 9px;
 		background-color: #fff;
-		border: 3px solid #494949;
 		clear: both;
-
-		border-radius: 15px;
-		-webkit-border-radius: 15px;
-		-moz-border-radius: 15px;
-		-o-border-radius: 15px;
+    border-radius: 15px;
 	}
 
-	div#picture-img img
-	{
-		display: block;
-		margin: 0 auto;
-    object-fit: fill;
+	div#picture-img {
+    border-radius: 15px;
+    width: 100%
 	}
+
+  div#picture-img img	{
+    height: 175px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    border: 3px solid #494949;
+  }
 
 	div#topPicture
 	{
@@ -1018,4 +1022,8 @@
 		display: none;
 	}
 
+}
+
+.fa-star {
+  color: #FFE031;
 }
