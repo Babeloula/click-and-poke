@@ -3,24 +3,29 @@
   height: 140px;
   width: 630px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
-  border-radius: 5px;
+  // border-radius: 5px;
   margin: 5px;
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 20px;
   padding: 15px;
-  border: 0.5px solid rgba(0,0,0,0.15);
-
+  // border: 0.5px solid rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.7s;
+  border-radius: 10px;
+  border: 5px outset rgb(255, 224, 49);
   &:hover {
-    transition: 0.4s;
-    border: 0.5px solid #FFDF32;
+    // transition: 0.4s;
+    transform: scale(1.02);
   }
 }
 
 .card-product img {
+  border: 4px ridge rgba(194, 194, 194, 0.6);
+  border-radius: 5px;
   height: 100%;
   width: 120px;
   object-fit: cover;
@@ -42,6 +47,51 @@
 
 .card-product-infos {
   margin-left: 20px;
+}
+
+.card-product-reviews {
+  overflow: hidden;
+  height: 140px;
+  width: 630px;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // border-radius: 5px;
+  margin: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  padding: 15px;
+  // border: 0.5px solid rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.7s;
+  border-radius: 10px;
+  border: 5px outset rgb(255, 224, 49);
+  &:hover {
+    // transition: 0.4s;
+    transform: scale(1.02);
+  }
+    & img {
+      border: 4px ridge rgba(194, 194, 194, 0.6);
+      border-radius: 5px;
+      height: 100%;
+      width: 120px;
+      object-fit: cover;
+    }
+      & h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+    }
+        & p {
+          font-size: 12px;
+          line-height: 1.4;
+          opacity: .7;
+          margin-bottom: 0;
+          margin-top: 8px;
+    }
 }
 
 #card-product-pending-mybook-flex {
@@ -80,4 +130,15 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 25px;
+}
+
+#card-flex-reviews {
+  display: flex;
+}
+#card-flex-acc-dec {
+  display: flex;
+}
+#card-div-acc-dec {
+  padding-top: 17px;
+  text-align: right;
 }

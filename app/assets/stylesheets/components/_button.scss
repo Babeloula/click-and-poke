@@ -43,31 +43,49 @@
 }
 
 .btn-green-accepted {
-  text-decoration: none;
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #07d511;
-  transition: background 0.3s ease;
-  opacity: 0.6;
+  border: 1px solid #00881b;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 5px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  transition: 0.1s;
+  & a {
+    color: black;
+  }
 }
 .btn-green-accepted:hover {
-  color: white;
+  // border: 1px solid grey;
+  background-color: rgba($color: #00881b, $alpha: 0.6);
+  color: black;
   text-decoration: none;
   opacity: 1;
+  & a {
+    color: white
+  }
 }
 
 .btn-red-declined {
-  text-decoration: none;
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #d50707;
-  transition: background 0.3s ease;
-  opacity: 0.6;
+  border: 1px solid rgb(214, 0, 0);
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 5px 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  transition: 0.1s;
+  & a {
+    color: black;
+  }
 }
 .btn-red-declined:hover {
-  color: white;
+  // border: 1px solid grey;
+  background-color: rgba($color: #E90000, $alpha: 0.6);
+  color: black;
   text-decoration: none;
   opacity: 1;
+  & a {
+    color: white
+  }
 }
