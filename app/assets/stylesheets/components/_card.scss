@@ -12,6 +12,9 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
+  &#card-type:hover {
+    transform: scale(1.08);
+  }
 }
 
 .card-booking{

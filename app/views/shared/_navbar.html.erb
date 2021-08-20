@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div>
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag asset_path('logo-clickpoke.png') %>
@@ -12,6 +12,9 @@
       <a><%= link_to "Share your PokeSpot 🌎", new_pokespot_path, class: "nav-link" %></a>
     </li>
   </div>
+  <div class="pokelogo">
+    <%= image_tag asset_path('pokeball.png'), class: "avatar" %>
+  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -19,9 +22,9 @@
         <li class="nav-item dropdown">
           <%= image_tag asset_path('badge_navbar.png'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "🗺 My PokeTrips", dashboard_path, class: "dropdown-item" %>
+            <%= link_to "🌍 My PokeTrips", dashboard_path, class: "dropdown-item" %>
             <%= link_to "💌 Messages", "#", class: "dropdown-item" %>
-            <%= link_to "🕊 Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "❌ Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>

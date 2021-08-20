@@ -52,6 +52,23 @@
             <div class="d-flex">
               <div>
                 <h2><%= pokespot.name %></h2>
+                <p>
+                  <small>
+                    <% rating = 0 %>
+                    <% pokespot.reviews.each do |review| %>
+                      <% rating += review.rating %>
+                    <% end %>
+                    <strong>
+                      <%= rating.fdiv(pokespot.reviews.count).round(1) %><i class="fas fa-star" id="rating"></i>
+                    </strong>
+                    <% if pokespot.reviews.count == 0 %>
+                        <%= pokespot.reviews.count %> review
+                    <% else %>
+                        <%= pokespot.reviews.count %> reviews
+                    <% end %>
+                  </small>
+                </p>
+                <hr>
                 <p><strong>Champion:</strong></p>
                 <p><%= pokespot.user.username%></p>
                 <hr>

@@ -4,17 +4,20 @@
   grid-gap: 16px;
   padding: 30px;
   flex-grow: 1;
+  &#home {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .card-trip {
   width: 230px;
-  height: 330px;
+  height: 335px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: 0.7s;
   border-radius: 10px;
-  border: 4px outset rgba(150, 150, 150, 0.6);
+  border: 5px outset rgb(255, 224, 49);
   &:hover {
     transform: scale(1.08);
   }
@@ -59,12 +62,15 @@
 
 .card-trip-infos {
   padding: 16px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
   color: black;
-  // border-top: thin outset rgba(0, 0, 0, 0.6);
+  h2 {
+    margin-bottom: 0px;
+  }
   hr {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
