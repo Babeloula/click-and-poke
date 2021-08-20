@@ -55,3 +55,52 @@
 }
 
 .nav-item-center a { color: inherit; }
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .nav-item-center {
+    display: none;
+  }
+  .pokelogo {
+    display: none;
+  }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .nav-item-center {
+    display: none;
+  }
+  .pokelogo {
+    display: block;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .nav-item-center {
+    display: none;
+  }
+  .pokelogo {
+    display: block;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .nav-item-center {
+    display: flex;
+  }
+  .pokelogo {
+    display: none;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .pokelogo {
+    display: none;
+  }
+}

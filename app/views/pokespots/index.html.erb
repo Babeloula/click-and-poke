@@ -1,4 +1,4 @@
-<div class="container-fluid m-3 d-flex">
+<div class="container-fluid d-flex">
   <div>
     <h1>Discover your next Pokespot!</h1>
 
@@ -25,30 +25,67 @@
 
     <div class="cards">
       <% @pokespots.each do |pokespot| %>
-      <div class="card-trip">
+      <div class="card-trip d-flex flex-column">
         <%= link_to pokespot_path(pokespot), style: "text-decoration: none" do %>
-          <div class="card-cover"><% if pokespot.photo.attached? %>
-                    <%= cl_image_tag pokespot.photo.key %>
-                    <% end %></div>
+          <div class="card-price d-flex justify-content-between">
+            <% if pokespot.pokemon_type == "Fire" %>
+              <h2>🔥</h2>
+            <% elsif pokespot.pokemon_type == "Water" %>
+              <h2>💧</h2>
+            <% elsif pokespot.pokemon_type == "Grass" %>
+              <h2>🌿</h2>
+            <% elsif pokespot.pokemon_type == "Electric" %>
+              <h2>⚡️</h2>
+            <% elsif pokespot.pokemon_type == "Poison" %>
+              <h2>☠️</h2>
+            <% elsif pokespot.pokemon_type == "Rock" %>
+              <h2>🗿</h2>
+            <% end %>
+            <h2><small>₽</small><%= pokespot.price %></h2>
+          </div>
+          <div class="card-cover align-items-center">
+            <% if pokespot.photo.attached? %>
+              <%= cl_image_tag pokespot.photo.key %>
+            <% end %>
+          </div>
           <div class="card-trip-infos">
             <div class="d-flex">
               <div>
                 <h2><%= pokespot.name %></h2>
-                <h3>Pokemon type: <%= pokespot.pokemon_type%></h3>
-                <p><%= pokespot.description %></p>
+                <p>
+                  <small>
+                    <% rating = 0 %>
+                    <% pokespot.reviews.each do |review| %>
+                      <% rating += review.rating %>
+                    <% end %>
+                    <strong>
+                      <%= rating.fdiv(pokespot.reviews.count).round(1) %><i class="fas fa-star" id="rating"></i>
+                    </strong>
+                    <% if pokespot.reviews.count == 0 %>
+                        <%= pokespot.reviews.count %> review
+                    <% else %>
+                        <%= pokespot.reviews.count %> reviews
+                    <% end %>
+                  </small>
+                </p>
+                <hr>
+                <p><strong>Champion:</strong></p>
+                <p><%= pokespot.user.username%></p>
+                <hr>
+                <p><strong>Pokemon Type:</strong> <%= pokespot.pokemon_type%></p>
+                <hr>
+                <p><strong>Catching Ratio:</strong> <%= pokespot.scarcity_drop_level%>%</p>
               </div>
-              <h2 class="align-self-end"><%= pokespot.price %>₽</h2>
             </div>
             <% if pokespot.user.photo.attached? %>
-                    <%= cl_image_tag pokespot.user.photo.key, class:"card-trip-user avatar-bordered" %>
-                    <% end%>
+              <%= cl_image_tag pokespot.user.photo.key, class:"card-trip-user avatar-bordered" %>
+            <% end%>
           </div>
         <% end %>
       </div>
       <% end %>
     </div>
   </div>
-
   <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"

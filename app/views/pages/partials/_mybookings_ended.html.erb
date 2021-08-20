@@ -12,7 +12,7 @@
           </div>
         </div>
           <!-- Button trigger modal -->
-        <button type="button" class="btn btn-gradient" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
         Leave a Review
         </button>
 
@@ -30,7 +30,10 @@
                 <%= simple_form_for [booking, Review.new] do |f| %>
                   <%= f.input :rating, hint: 'Rate this PokeSpot between 1 and 5' %>
                   <%= f.input :comments %>
-                  <%= f.submit "Submit Review", class: "btn btn-gradient" %>
+                <div class="text-center">
+                  <%= f.submit "Submit Review", class: "btn-review" %>
+                  <% raise %>
+                </div>
                 <% end %>
               </div>
             </div>
