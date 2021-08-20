@@ -9,8 +9,8 @@
       <p>Scarcity Drop Level : <%= @pokespot.scarcity_drop_level %>%</p>
       <span>Price : <%= @pokespot.price %>₽</span>
     </div>
-    <div class="card text mb-3 p-3">
-      <p><strong>Reviews :</strong></p>
+    <h3>Reviews :</h3>
+    <div id="review-show" class="card text mb-3 p-3">
       <% @reviews.each do |review| %>
         <div class="d-flex align-items-center mb-2">
           <%= cl_image_tag review.booking.user.photo.key, class:"card-trip-user avatar-bordered" %>
