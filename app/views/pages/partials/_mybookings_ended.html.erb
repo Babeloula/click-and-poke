@@ -12,6 +12,8 @@
               <p><strong>End date : </strong><%= booking.end_date %></p>
             </div>
           </div>
+
+         <!-- Button trigger modal -->
         <% if booking.reviews.where(booking_id: booking.id) == nil %>
           <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
             Leave a Review
@@ -22,7 +24,7 @@
           </button>
         <% end %>
         </div>
-          <!-- Button trigger modal -->
+
           <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
