@@ -7,6 +7,9 @@
 .navbar-lewagon.home {
   background-color: transparent;
   color: white;
+  #login-text {
+    color: white;
+  }
 }
 
 .navbar-lewagon-white {
@@ -17,6 +20,9 @@
 .navbar-lewagon-white.home {
   background-color: white;
   color: black;
+    #login-text {
+    color: black;
+  }
 }
 
 #navbarSupportedContent {
