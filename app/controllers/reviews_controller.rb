@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      flash[:notice] = "Something went wrong... Please try again! 👍"
+      redirect_to booking_path(@booking)
     end
   end
 
@@ -25,6 +26,6 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review)
-          .permit(:rating, :comment, :booking_id)
+          .permit(:rating, :comments, :booking_id)
   end
 end

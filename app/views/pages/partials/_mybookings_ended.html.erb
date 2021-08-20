@@ -12,10 +12,15 @@
           </div>
         </div>
           <!-- Button trigger modal -->
-        <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
-        Leave a Review
-        </button>
-
+        <% if booking.reviews.where(booking_id: booking.id) == nil %>
+          <button type="button" class="btn-review" data-toggle="modal" data-target="#exampleModal">
+            Leave a Review
+          </button>
+        <% else %>
+          <button class="btn-review-done">
+            Thanks for your Review 🙌
+          </button>
+        <% end %>
           <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -32,7 +37,6 @@
                   <%= f.input :comments %>
                 <div class="text-center">
                   <%= f.submit "Submit Review", class: "btn-review" %>
-                  <% raise %>
                 </div>
                 <% end %>
               </div>
