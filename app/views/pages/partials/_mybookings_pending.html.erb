@@ -2,7 +2,8 @@
   <div id="card-product-pending-mybook-flex">
     <% @bookings.status_Pending.each do |booking| %>
       <div class="card-product">
-        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
+
+        <%# <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %> %>
         <div class="card-product-infos">
           <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
           <p><strong>Client name : </strong><%= booking.user.username%></p>
