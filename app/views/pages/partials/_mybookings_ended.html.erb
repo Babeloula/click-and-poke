@@ -4,7 +4,9 @@
       <% if booking.end_date <= Date.today || booking.status_Declined?%>
         <div class="card-product-reviews">
           <div id="card-flex-reviews">
-            <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(booking) %>
+            <% if booking.pokespot.photo.attached? %>
+              <%= cl_image_tag booking.pokespot.photo.key %>
+            <% end %>
             <div class="card-product-infos">
               <p><strong>Rented Pokespot : </strong><%= booking.pokespot.name %></p>
               <p><strong>PokeHost username : </strong><%= booking.pokespot.user.username%></p>

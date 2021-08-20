@@ -4,7 +4,9 @@
 
       <div class="card-product-reviews">
         <div id="card-flex-acc-dec">
-          <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(client_booking) %>
+          <% if client_booking.pokespot.photo.attached? %>
+            <%= cl_image_tag client_booking.pokespot.photo.key %>
+          <% end %>
           <div class="card-product-infos">
             <div>
               <p><strong>Rented Pokespot : </strong><%= client_booking.pokespot.name %></p>
