@@ -35,6 +35,8 @@ User.create!(
   user.save!
 end
 
+ADDRESSES = ["702 1st Street, Libertyville, Illinois, United States of America", "8266 Lake Peigneur Road, Jefferson Island, Louisiana, United States of America", "206 Tor-an-Eas, Glenfinnan, Scotland, United Kingdom", "129 Harrington Road, Akron, Ohio, United States of America", "173 Road Runner Lane, California, California, United States of America", "44 US 95, Las Vegas, Nevada, United States of America", "4049 Higdon Road, Nashville-Davidson, Tennessee, United States of America", "52 Farm to Market Road 1311, Twentymile Crossing, Texas, United States of America", "73 Antelope Creek Road, Lincoln, Nebraska, United States of America", "56 North Fork Road, Colorado, Colorado, United States of America", "501 Lake Road East Fork, Hamlin, New York, United States of America", "13 County Road 13, Colorado, Colorado, United States of America", "32 Rue Maurice Lachatre, Drancy, Île-de-France, France", "136 Chemin de la Bassière, Saint-Georges-d'Espéranche, Auvergne-Rhône-Alpes, France", "112 Route de Bédarrides, Sorgues, Provence-Alpes-Côte d'Azur, France", "146 Route de Joeuf, Montois-la-Montagne, Grand-Est, France", "62 Chemin des Peyroules, Cournonterral, Occitanie, France", "48 Rue des Boutons d'Or, Saint-Paul, La Réunion, France",  "Antananarivo", "Sydney", "Jakarta", "Benjing", "Shanghai", "Tokyo", "81 rue Blanche 75009, France", "12 allée des myosotis, Montmagny", "Perth", "Boston", "New-york City", "Jersey", "Bombay", "Doha", "St. Petersburg, Florida, United States of America", "Saint Petersburg, Санкт-Петербург, Russia", "Alger", "Tunis", "Kinshasa, Democratic Republic of the Congo", "Rue de Tanzanie, La Possession, La Réunion, France", "Dodoma", "Tanzania", "Puerto Natales, Región de Magallanes y de la Antártica Chilena, Chile", "Cartagena, Bolívar, Colombia", "Santa Cruz de la Sierra, Santa Cruz, Bolivia", "Mexico", "Panama", "Cuba", "Martinique", "Montreal", "Quebec", "argentina", "La Paz", "Belgrad", "Stockholm", "Amsterdam", "Berlin", "Munich", "Warsaw, województwo mazowieckie, Poland", "Kabul", "Samara", "Uzbekistan", "Mongolia", "Bhutan", "Hong-Kong", "Davao", "Papete", "Sao Paulo", "Balsas", "Liberia", "Juba"]
+
 puts "10 Users created!"
 
 puts "Creating 30 Pokespots"
@@ -42,7 +44,7 @@ puts "Creating 30 Pokespots"
 30.times do
   Pokespot.create!(
     name: Faker::Games::Pokemon.unique.location,
-    address: Faker::Address.unique.city,
+    address: ADDRESSES.sample,
     description: Faker::JapaneseMedia::OnePiece.quote,
     scarcity_drop_level: rand(1..100),
     price: rand(1..500),

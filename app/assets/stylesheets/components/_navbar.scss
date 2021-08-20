@@ -1,6 +1,28 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: white;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon.home {
+  background-color: transparent;
+  color: white;
+  #login-text {
+    color: white;
+  }
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+  color: black;
+}
+
+.navbar-lewagon-white.home {
+  background-color: white;
+  color: black;
+    #login-text {
+    color: black;
+  }
 }
 
 #navbarSupportedContent {

@@ -1,6 +1,7 @@
 <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
   <div id="card-product-pending-mypoke-flex">
     <% @clients_booking.status_Pending.each do |client_booking| %>
+
       <div class="card-product-reviews">
         <div id="card-flex-acc-dec">
           <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png"), booking_path(client_booking) %>

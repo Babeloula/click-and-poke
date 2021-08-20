@@ -38,6 +38,12 @@ color: white;
 
 // Navbar + footer take all screen
 .content-wrapper {
+  padding-top: 70px;
+  min-height: 90vh;
+}
+
+.content-wrapper.home {
+  padding-top: 0px;
   min-height: calc(100vh - 90px - 130px);
 }
 
@@ -81,3 +87,9 @@ color: white;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+// div 2 home (become a pokehost)
+
+.card-pokehost:hover {
+    transform: scale(0.95);
+  }
