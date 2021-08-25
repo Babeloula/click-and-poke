@@ -21,25 +21,25 @@
   </div>
   <div class="cards" id="home">
     <%= link_to pokespots_path(filter: "Water") do %>
-      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629291402/water_fjdurr.png)">
+      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=asset_path('water.png')%>);">
         Water
       </div>
     <% end %>
 
     <%= link_to pokespots_path(filter: "Fire") do %>
-      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629292335/fire_ubhwjw.jpg)">
+      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=asset_path('fire.jpg')%>);">
         Fire
       </div>
     <% end %>
 
     <%= link_to pokespots_path(filter: "Grass") do %>
-      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629292349/grass_udicok.jpg)">
+      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=asset_path('grass.jpg')%>);">
         Grass
       </div>
     <% end %>
 
     <%= link_to pokespots_path(filter: "Electric") do %>
-      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629291391/thunder_ogbwso.jpg)">
+      <div class="card-category" id="card-type" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=asset_path('thunder.jpg')%>);">
         Electric
       </div>
     <% end %>
@@ -54,7 +54,7 @@
   </div>
    <%= link_to new_pokespot_path do %>
     <div class="card-pokehost">
-      <div class="card-host" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dnh5m7rqh/image/upload/v1629293780/2595054e-d1d9-4fde-8046-58d51fcb3164_mszhyr.jpg)">
+      <div class="card-host" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path('host_poke_lol.jpg')%>);">
         <div id="text-2">
           Become a host and earn Pokedollars 🤑🤑
         </div>
